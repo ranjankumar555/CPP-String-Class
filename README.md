@@ -1,1 +1,1 @@
-# C-String-Class
+# CPP-String-Class
