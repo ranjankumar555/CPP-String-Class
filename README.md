@@ -112,17 +112,114 @@ friend bool my_strstr(const String&, const String&);
 
 📌 Note: `'a' += s1` is invalid due to immutability of literals.
 
-## 🧪 Sample Test Cases
+## 🧪 Performed Test Cases
 
 Demonstrated in `main.cpp`:
+```cpp
+/*** main.cpp ***/
+int main() {
 
-* Construction, copy, move semantics
-* String mutation using `[]` operator
-* All concatenation variations
-* Comparison logic
-* Stream input/output
-* Iterator usage
-* length synchronization across all instances
+	String s1("vector india");
+	s1[0] = 's';
+	cout << "s1 = ";
+	s1.getstr();
+	
+	cout<<"-------------------------------------------"<<endl;
+	String s2 = "bangalore";
+	cout<<"s2  = "<<s2<<endl;
+	cout << "Length of s2 = " << s2.len() << endl;
+
+	// Concatenation: Case 1
+	cout<<"-------------------------------------------"<<endl;
+	String s3;
+	s3 = s1 + s2;
+	cout<<"s1 = "<<s1<<", s2 = "<<s2<<endl;
+	cout << "s3 = s1+s2 => ";
+	s3.getstr();
+
+	// Case 2
+	cout<<"-------------------------------------------"<<endl;
+	cout<<"s3 = "<<s3<<", s1 = "<<s1<<endl; 
+	s3 += s1;
+	cout << "s3 += s1 => " << s3 << endl;
+
+	// Case 3
+	cout<<"-------------------------------------------"<<endl;
+	cout << "s1 = " << s1 << endl;
+	s3 = s1 + "vector";
+	cout<<" s3 = s1 + \"vector\" => "<<s3<<endl;
+
+	// Case 4:
+	cout<<"-------------------------------------------"<<endl;
+	cout<<"s1 = "<<s1<<endl;
+	s3 = "vector" + s1;
+	cout << "s3 = \"vector\" + s1 => " << s3 << endl;
+
+	// Case 5
+	cout<<"-------------------------------------------"<<endl;
+	cout<<"s3 = "<<s3<<endl;
+	cout << "s3 += \"Vector\" => ";
+	s3 += "Vector";
+	cout <<s3 << endl;
+
+	// Case 6
+	cout<<"-------------------------------------------"<<endl;
+	cout<<"s1 = "<<s1<<endl;
+	s3 = s1 + 'x';
+	cout << "s3 = s1 + 'x' => " << s3 << endl;
+
+	// Case 7
+	cout<<"-------------------------------------------"<<endl;
+	cout<<"s1 = "<<s1<<endl;
+	s3 = 'x' + s1;
+	cout << "'x' + s1 = " << s3 << endl;
+
+	// Case 8
+	cout<<"-------------------------------------------"<<endl;
+	cout<<"s3 = "<<s3<<endl;
+	s3 += 'x';
+	cout << "s3 += 'x' = " << s3 << endl;
+	cout << "Length of s3 = " << s3.len() << endl;
+
+	// [] and << overload
+	cout<<"-------------------------------------------"<<endl;
+	cout << "Characters of s3: ";
+	for (int i = 0; i < s3.len(); i++) {
+		cout << s3[i] << " ";
+	}
+	cout << endl;
+	
+	// >> overload and chaining support
+	cout<<"-------------------------------------------"<<endl;
+	String s4, s5;
+	cout << "Enter two strings (s4 and s5): ";
+	cin >> s4 >> s5;
+
+	cout << "S4: " << s4 << endl;
+	cout << "Length of s4 = " << s4.len() << endl;
+
+	cout<<"-------------------------------------------"<<endl;
+	cout << "s5 = ";
+	s5.getstr();
+	cout << "Length of s5 = " << s5.len() << endl;
+	cout<<"--------------------------------------------"<<endl;
+	
+	// comparison operator
+	cout<<"*********** String Comparision *************"<<endl;
+	cout<<"--------------------------------------------"<<endl;
+	cout<<"s4 = "<<s4<<endl;
+	cout<<"s5 = "<<s5<<endl;
+	cout<<"s4 >  s5 => "<< (s4>s5) << endl;
+	cout<<"s4 >= s5 => "<< (s4>=s5) << endl;
+	cout<<"s4 <  s5 => "<< (s4<s5) << endl;
+	cout<<"s4 <= s5 => "<< (s4<=s5) << endl;
+	cout<<"s4 == s5 => "<< (s4==s5) << endl;
+	cout<<"s4 != s5 => "<< (s4!=s5) << endl;
+	cout<<"--------------------------------------------"<<endl;
+
+	return 0;
+}
+```
 
 ## 🛠️ Technologies Used
 
