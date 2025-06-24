@@ -2,6 +2,10 @@
 
 This project demonstrates a complete implementation of a `String` class in C++, mimicking the behavior of `std::string` while giving full control over memory management, object semantics, and operator overloading. It is a hands-on demonstration of deep knowledge in object-oriented programming, RAII, and STL-like usability.
 
+## Design
+![miniproject1](https://github.com/user-attachments/assets/56760af4-ca7f-4729-b4bf-290e1316a410)
+
+
 ## ✨ Features
 
 - Supports various construction styles:
